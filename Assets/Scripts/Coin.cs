@@ -17,6 +17,7 @@ public class Coin : MonoBehaviour
         if (collision.gameObject.CompareTag("SpaceShip"))
         {
             Destroy(gameObject);
+            Score.coin++;
         }
     }
 }

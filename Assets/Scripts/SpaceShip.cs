@@ -13,10 +13,18 @@ public class SpaceShip : MonoBehaviour
     private void Update()
     {
         time = Time.time;
+        if (Input.touchCount == 1)
+        {
+            Touch touch = Input.GetTouch(0);
+            Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+            touchPosition.z = 0f;
+            transform.position = touchPosition;
+
+        }
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && time - lastTime > timeInterval)
         {
             GameObject newBullet = Instantiate(bullet);
-            newBullet.transform.position = new Vector3(transform.position.x, -17, 0);
+            newBullet.transform.position = new Vector3(transform.position.x, transform.position.y, 0);
             Destroy(newBullet, 5);
             lastTime = time;
         }

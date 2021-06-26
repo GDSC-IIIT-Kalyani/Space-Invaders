@@ -5,6 +5,8 @@ using UnityEngine;
 public class Alien : MonoBehaviour
 {
     private bool stop = false;
+    public GameObject alien;
+
     private void Update()
     {
         if (transform.position.y > -300 || !stop)

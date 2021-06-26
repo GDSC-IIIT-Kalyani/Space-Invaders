@@ -16,7 +16,7 @@ public class CoinReplacer : MonoBehaviour
         {
             GameObject newCoin = Instantiate(coin);
             newCoin.transform.position = new Vector3(Random.Range(-10, 10), 17, 0);
-            Destroy(newCoin, 20);
+            Destroy(newCoin, 50);
             lastTime = time;
         }
     }

@@ -15,8 +15,8 @@ public class AlienReplacer : MonoBehaviour
         if (time - lastTime > timeInterval)
         {
             GameObject newAlien = Instantiate(alien);
-            newAlien.transform.position = new Vector3(Random.Range(-10, 10), 17, 0);
-            Destroy(newAlien, 20);
+            newAlien.transform.position = new Vector3(Random.Range(-9, 9), 17, 0);
+            Destroy(newAlien, 50);
             lastTime = time;
         }
     }
