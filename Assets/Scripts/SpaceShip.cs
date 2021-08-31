@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SpaceShip : MonoBehaviour
 {
@@ -19,7 +16,6 @@ public class SpaceShip : MonoBehaviour
             Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
             touchPosition.z = 0f;
             transform.position = touchPosition;
-
         }
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && time - lastTime > timeInterval)
         {
