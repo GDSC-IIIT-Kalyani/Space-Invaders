@@ -5,6 +5,7 @@ public class Alien : MonoBehaviour
 {
     private bool stop = false;
     public GameObject spaceship;
+    public AudioSource end;
     public Button replay;
 
     private void Start()
@@ -33,6 +34,7 @@ public class Alien : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("SpaceShip"))
         {
+            end.Play();
             Destroy(gameObject);
             Pause();
         }

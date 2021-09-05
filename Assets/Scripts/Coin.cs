@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    void Update()
+    public AudioSource coin;
+
+    private void Update()
     {
         if (transform.position.y > -300)
         {
@@ -14,6 +16,7 @@ public class Coin : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("SpaceShip"))
         {
+            coin.Play();
             Destroy(gameObject);
             Score.coin++;
             if (Score.coin >= Score.highScore)

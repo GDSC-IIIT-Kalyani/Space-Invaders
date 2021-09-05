@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public AudioSource kill;
+
     private void Update()
     {
         if (transform.position.y < 300)
@@ -14,6 +16,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Alien"))
         {
+            kill.Play();
             Destroy(gameObject);
             Destroy(collision.gameObject);
             Score.alien++;
